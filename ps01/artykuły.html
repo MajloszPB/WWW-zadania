@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artykuły</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="artykuły.html">Artykuły</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">O Mnie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="section-main">
+            <p><a href="#first-article">Jak programować w JavaScript</a></p>
+            <p><a href="#second-article">Jak programować w C#</a></p>
+            <p><a href="#third-article">Jak programować w Pythonie</a></p>
+
+           <article id="first-article">
+    <h2>Jak programować w JavaScript</h2>
+    <p>Tworzenie klasy w JavaScript</p>
+    <pre><code>
+class Nazwa {
+    constructor(atrybuty) {
+        this.atrybuty = atrybuty;
+    }
+
+    metoda() {
+        return this.atrybuty;
+    }
+}
+    </code></pre>
+
+    <p>Funkcja główna (main)</p>
+    <pre><code>
+function main() {
+    const obiekt = new Nazwa(10);
+    console.log(obiekt.metoda());
+}
+
+main();
+    </code></pre>
+
+    <time datetime="2025-07-01">1 lipca 2025</time>
+    <a href="#section-main">Powrót</a>
+</article>
+
+<article id="second-article">
+    <h2>Jak programować w C#</h2>
+    <p>Tworzenie klasy w C#</p>
+    <pre><code>
+class Nazwa {
+    public int atrybuty;
+
+    public Nazwa(int atrybuty) {
+        this.atrybuty = atrybuty;
+    }
+
+    public int Metoda() {
+        return atrybuty;
+    }
+}
+    </code></pre>
+
+    <p>Metoda Main</p>
+    <pre><code>
+class Program {
+    public static void Main(string[] args) {
+        Nazwa obiekt = new Nazwa(5);
+        Console.WriteLine(obiekt.Metoda());
+    }
+}
+    </code></pre>
+
+    <time datetime="2025-07-01">1 lipca 2025</time>
+    <a href="#section-main">Powrót</a>
+</article>
+
+<article id="third-article">
+    <h2>Jak programować w Pythonie</h2>
+    <p>Tworzenie klasy w Pythonie</p>
+    <pre><code>
+class Nazwa:
+    def __init__(self, atrybuty):
+        self.atrybuty = atrybuty
+
+    def metoda(self):
+        return self.atrybuty
+    </code></pre>
+
+    <p>Funkcja main</p>
+    <pre><code>
+def main():
+    obiekt = Nazwa(10)
+    print(obiekt.metoda())
+
+if __name__ == "__main__":
+    main()
+    </code></pre>
+
+    <time datetime="2025-07-01">1 lipca 2025</time>
+    <a href="#section-main">Powrót</a>
+</article>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy Miłosz Szymczuk</p>
+    </footer>
+</body>
+
+</html>
