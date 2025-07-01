@@ -17,15 +17,16 @@
 
         <dialog id="confirm">
             <p><h4>Czy napewno chcesz usunąć tę notatkę</h4></p>
-            <button name="deleteButton" id="deleteButton" type="submit">Tak</button>
-            <button name="deleteButton" id="deleteButton" type="submit">Nie</button>
+            <button name="deleteButton" id="deleteButton" type="submit" value="tak">Tak</button>
+            <button name="noDeleteButton" id="noDeleteButton" type="submit" value="nie">Nie</button>
         </dialog>
         <dialog id="edit">
             <p><h4>Edytuj notatkę</h4></p>
-            <p id="editingText">Treść:<br></p>
+            <p>Treść:</p>
+            <p id="editingText"></p>
             <textarea name="newtext" id="newtext" placeholder="Edytuj"></textarea><br>
-            <button>Zapisz</button>
-            <button>Anuluj</button>
+            <button name="editButton" id="editButton" type="submit" value="zapisz">Zapisz</button>
+            <button name="noEditButton" id="noEditButton" type="submit" value="anuluj">Anuluj</button>
         </dialog>
 
     </header>

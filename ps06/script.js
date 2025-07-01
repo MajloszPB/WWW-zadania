@@ -10,7 +10,7 @@ myform.addEventListener('submit', (event) => {
     const inputText = document.getElementById("text").value;
 
     const section = document.createElement("section");
-        
+
     const h2 = document.createElement("h2");
     h2.textContent = inputTitle;
 
@@ -30,26 +30,43 @@ myform.addEventListener('submit', (event) => {
     section.appendChild(deleteBtn);
     section.appendChild(editBtn);
     output.appendChild(section);
+
+    deleteBtn.addEventListener('click', () => {
+        dlgConfirm.showModal();
+
+        deleteButton.addEventListener('click', () => {
+            section.remove();
+            dlgConfirm.close();
+        })
+
+        noDeleteButton.addEventListener('click', () => {
+            dlgConfirm.close();
+        })
+    })
+
+    editBtn.addEventListener('click', () => {
+        dlgEdit.showModal();
+
+        const editingText = document.getElementById("editingText");
+        editingText.textContent = inputText;
+        editingText.appendChild(editingText);
+
+    })
+
+    editButton.addEventListener('click', () => {
+        const newText = document.getElementById("newtext").value;
+        p.textContent = newText;
+        document.querySelector("p").innerHTML = p;
+        dlgEdit.close();
+    })
+
+    noEditButton.addEventListener('click', () => {
+        dlgEdit.close();
+    })
 })
 
-deleteBtn.addEventListener('click', () => {
-    dlgConfirm.showModal();
-})
-    
-deleteButton.addEventListener('click', () => {
-    section.remove();
-})
 
-noDeleteButton.addEventListener('click', () => {
-    dlgConfirm.close();
-})
-    
 
-editBtn.addEventListener('click', () => {
-    dlgEdit.showModal();
-    const editingText = document.createElement("editingText");
-    editingText.appendChild(inputText);
-    p.textContent = editedText;
-})
+
 
 
