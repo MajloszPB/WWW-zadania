@@ -7,16 +7,16 @@
     <title>Artykuły</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </head>
 
 <body>
     <header>
         <h1><a href="artykuły.html">Artykuły</a></h1>
         <nav>
-            <ul>
-                <li><a href="index.html">O Mnie</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+                <a href="index.html">O Mnie</a>
+                <a href="artykuły.html" class="active">Artykuły</a>
+                <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
     <main>
@@ -29,7 +29,7 @@
     <h2>Jak programować w JavaScript</h2>
     <img src="https://picsum.photos/199" alt="random-photo">
     <p>Tworzenie klasy w JavaScript</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 class Nazwa {
     constructor(atrybuty) {
         this.atrybuty = atrybuty;
@@ -42,7 +42,7 @@ class Nazwa {
     </code></pre>
 
     <p>Funkcja główna (main)</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 function main() {
     const obiekt = new Nazwa(10);
     console.log(obiekt.metoda());
@@ -59,7 +59,7 @@ main();
     <h2>Jak programować w C#</h2>
     <img src="https://picsum.photos/200" alt="random-photo">
     <p>Tworzenie klasy w C#</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 class Nazwa {
     public int atrybuty;
 
@@ -74,7 +74,7 @@ class Nazwa {
     </code></pre>
 
     <p>Metoda Main</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 class Program {
     public static void Main(string[] args) {
         Nazwa obiekt = new Nazwa(5);
@@ -91,7 +91,7 @@ class Program {
     <h2>Jak programować w Pythonie</h2>
     <img src="https://picsum.photos/201" alt="random-photo">
     <p>Tworzenie klasy w Pythonie</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 class Nazwa:
     def __init__(self, atrybuty):
         self.atrybuty = atrybuty
@@ -101,7 +101,7 @@ class Nazwa:
     </code></pre>
 
     <p>Funkcja main</p>
-    <pre><code>
+    <pre class="prettyprint"><code>
 def main():
     obiekt = Nazwa(10)
     print(obiekt.metoda())

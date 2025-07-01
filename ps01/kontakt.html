@@ -13,10 +13,9 @@
     <header>
         <h1><a href="kontakt.html">Kontakt</a></h1>
         <nav>
-            <ul>
-                <li><a href="index.html">O Mnie</a></li>
-                <li><a href="artykuły.html">Artykuły</a></li>
-            </ul>
+            <a href="index.html">O Mnie</a>
+            <a href="artykuły.html">Artykuły</a>
+            <a href="kontakt.html" class="active">Kontakt</a>
         </nav>
     </header>
     <main>
@@ -37,18 +36,94 @@
         </section>
         <section>
             <form action="https://httpbin.org/post" method="post">
-                <label for="name">Imię i nazwisko <input type="text" id="name"></label><br>
-                <label for="email">Adres e-mail <input type="email" id="email"></label><br>
-                <label for="phone">Numer telefonu <input type="tel" id="phone"></label><br>
-                <label for="birth-date">Data urodzenia <input type="date" id="birth-date"></label><br>
-                <label for="sex">Wybór płci<br>
-                <input type="radio" value="kobieta" id="sex">Kobieta<br>
-                <input type="radio" value="mezczyzna" id="sex">Mężczyzna<br>
-                <input type="radio" value="niepodaje" id="sex">Nie podaję<br></label>
-                <label for="data">Zgoda na przetwarzanie danych <input type="checkbox" id="data"></label><br>
-                
+                <fieldset>
+                    <label for="name">Imię i nazwisko <input type="text" id="name" required="true"
+                            name="name"></label><br>
+                    <label for="email">Adres e-mail <input type="email" id="email" name="email"></label><br>
+                    <label for="phone">Numer telefonu <input type="tel" id="phone" name="phone"></label><br>
+                    <label for="birth-date">Data urodzenia <input type="date" id="birth-date"
+                            name="birth-date"></label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Wybór płci</legend>
+                    <input type="radio" id="kobieta" name="plec" value="kobieta" checked>
+                    <label for="plec">Kobieta</label><br>
+
+                    <input type="radio" name="plec" id="mezczyzna" value="mezczyzna">
+                    <label for="plec">Mężczyzna</label><br>
+
+                    <input type="radio" name="plec" id="niepodaje" value="niepodaje">
+                    <label for="plec">Nie podaję</label><br>
+                </fieldset>
+                <fieldset>
+                    <label for="data">Zgoda na przetwarzanie danych <input type="checkbox" id="data" name="data" required="true"></label><br>
+                    <label for="btn"><input type="submit" value="Wyślij" id="button"></label>
+                </fieldset>
             </form>
         </section>
+        <section>
+            <table>
+                <tr>
+                    <td></td>
+                    <th>Pon</th>
+                    <th>Śr</th>
+                    <th>Czw</th>
+                </tr>
+                <tr>
+                    <th>Rano</th>
+                    <td>Jak programować w JavaScript</td>
+                    <td>Jak programować w C#</td>
+                    <td>Jak programować w Pythonie</td>
+                </tr>
+                <tr>
+                    <th>Wieczór</th>
+                    <td>Jak programować w Pythonie</td>
+                    <td>Jak programować w C#</td>
+                    <td>Jak programować w JavaScript</td>
+                </tr>
+            </table>
+        </section>
+        <section id="faq">
+            <h2>FAQ – Najczęściej zadawane pytania</h2>
+
+            <details>
+                <summary>Jakiego języka warto się nauczyć na początek?</summary>
+                <p>Na początek polecamy Python – ma prostą składnię i jest świetny do nauki podstaw programowania,
+                    algorytmiki i automatyzacji.</p>
+            </details>
+
+            <details>
+                <summary>Jaka jest różnica między klasą a funkcją?</summary>
+                <p>Funkcja to fragment kodu, który wykonuje konkretną operację. Klasa to struktura opisująca obiekt,
+                    który może zawierać dane (atrybuty) i funkcje (metody).</p>
+            </details>
+
+            <details>
+                <summary>Czym różni się składnia C# od Pythona?</summary>
+                <p>C# jest językiem statycznie typowanym z nawiasami klamrowymi i średnikami. Python jest dynamicznie
+                    typowany i opiera się na wcięciach zamiast nawiasów.</p>
+            </details>
+
+            <details>
+                <summary>Gdzie najlepiej testować kod w JavaScript?</summary>
+                <p>Najprościej w przeglądarce – użyj konsoli (F12 → Konsola). Możesz też korzystać z edytorów online jak
+                    JSFiddle, CodePen czy repl.it.</p>
+            </details>
+
+            <details>
+                <summary>Co oznacza metoda <code>__init__</code> w Pythonie?</summary>
+                <p>To konstruktor klasy. Wywołuje się automatycznie przy tworzeniu obiektu – służy do inicjalizacji
+                    atrybutów.</p>
+            </details>
+
+            <details>
+                <summary>Dlaczego metoda Main w C# musi być statyczna?</summary>
+                <p>Bo uruchamiana jest bez tworzenia instancji klasy – program zaczyna się od niej, zanim powstaną
+                    obiekty.</p>
+            </details>
+
+        </section>
+
     </main>
     <footer>
         <p>&copy Miłosz Szymczuk</p>
