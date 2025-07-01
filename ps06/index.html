@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katolog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Katolog</h1>
+        <form id="form">
+            <label for="title"><input type="text" name="title" id="title" placeholder="Tytuł"></label>
+            <label for="text"><textarea name="text" id="text" placeholder="Treść"></textarea></label>
+            <label for="button"><button name="button" id="button" type="submit">Zapisz</button></label>
+        </form>
+
+        <dialog id="confirm">
+            <p><h4>Czy napewno chcesz usunąć tę notatkę</h4></p>
+            <button name="deleteButton" id="deleteButton" type="submit">Tak</button>
+            <button name="deleteButton" id="deleteButton" type="submit">Nie</button>
+        </dialog>
+        <dialog id="edit">
+            <p><h4>Edytuj notatkę</h4></p>
+            <p id="editingText">Treść:<br></p>
+            <textarea name="newtext" id="newtext" placeholder="Edytuj"></textarea><br>
+            <button>Zapisz</button>
+            <button>Anuluj</button>
+        </dialog>
+
+    </header>
+    <main id="main">
+    
+    </main>
+    <footer>
+
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
