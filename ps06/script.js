@@ -3,11 +3,21 @@ const myform = document.querySelector("form");
 const output = document.getElementById("main");
 const dlgConfirm = document.getElementById("confirm");
 const dlgEdit = document.getElementById("edit");
+const editButton = document.getElementById("editButton");
+const noEditButton = document.getElementById("noEditButton");
+const deleteButton = document.getElementById("deleteButton");
+const noDeleteButton = document.getElementById("noDeleteButton");
+
+let headerTwoToEdit = null;
+let headerFourToEdit = null;
+let paragraphToEdit = null;
+let sectionToDelete = null;
 
 myform.addEventListener('submit', (event) => {
     event.preventDefault()
     const inputTitle = document.getElementById("title").value;
     const inputText = document.getElementById("text").value;
+    const inputPrice = document.getElementById("price").value;
 
     const section = document.createElement("section");
 
@@ -16,6 +26,9 @@ myform.addEventListener('submit', (event) => {
 
     const p = document.createElement("p");
     p.textContent = inputText;
+
+    const h4 = document.createElement("h4");
+    h4.textContent = inputPrice + " zł";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Usuń";
@@ -27,44 +40,50 @@ myform.addEventListener('submit', (event) => {
 
     section.appendChild(h2);
     section.appendChild(p);
+    section.appendChild(h4);
     section.appendChild(deleteBtn);
     section.appendChild(editBtn);
     output.appendChild(section);
 
     deleteBtn.addEventListener('click', () => {
-        dlgConfirm.showModal();
-
-        deleteButton.addEventListener('click', () => {
-            section.remove();
-            dlgConfirm.close();
-        })
-
-        noDeleteButton.addEventListener('click', () => {
-            dlgConfirm.close();
-        })
+        sectionToDelete = section;
+        dlgConfirm.showModal(); 
     })
-
     editBtn.addEventListener('click', () => {
+        headerTwoToEdit = h2;
+        paragraphToEdit = p;
+        headerFourToEdit = h4;
+
+        document.getElementById("newTitle").value = headerTwoToEdit.textContent;
+        document.getElementById("newtext").value = paragraphToEdit.textContent;
+        document.getElementById("newPrice").value = headerFourToEdit.textContent;
         dlgEdit.showModal();
-
-        const editingText = document.getElementById("editingText");
-        editingText.textContent = inputText;
-        editingText.appendChild(editingText);
-
-    })
-
-    editButton.addEventListener('click', () => {
-        const newText = document.getElementById("newtext").value;
-        p.textContent = newText;
-        document.querySelector("p").innerHTML = p;
-        dlgEdit.close();
-    })
-
-    noEditButton.addEventListener('click', () => {
-        dlgEdit.close();
     })
 })
 
+deleteButton.addEventListener('click', () => {
+    sectionToDelete.remove();
+    dlgConfirm.close();
+})
+
+noDeleteButton.addEventListener('click', () => {
+    dlgConfirm.close();
+})
+
+editButton.addEventListener('click', () => {
+    headerTwoToEdit.textContent = document.getElementById("newTitle").value;
+    paragraphToEdit.textContent = document.getElementById("newtext").value;
+    headerFourToEdit.textContent = document.getElementById("newPrice").value + " zł";
+    dlgEdit.close();
+
+    headerTwoToEdit = null;
+    paragraphToEdit = null;
+    headerFourToEdit = null;
+})
+
+noEditButton.addEventListener('click', () => {
+    dlgEdit.close();
+})
 
 
 

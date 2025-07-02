@@ -11,20 +11,21 @@
         <h1>Katolog</h1>
         <form id="form">
             <label for="title"><input type="text" name="title" id="title" placeholder="Tytuł"></label>
-            <label for="text"><textarea name="text" id="text" placeholder="Treść"></textarea></label>
+            <label for="text"><textarea name="text" id="text" placeholder="Opis"></textarea></label>
+            <label for="price"><input type="number" name="price" id="price" placeholder="Cena"></label>
             <label for="button"><button name="button" id="button" type="submit">Zapisz</button></label>
         </form>
 
         <dialog id="confirm">
-            <p><h4>Czy napewno chcesz usunąć tę notatkę</h4></p>
+            <p><h4>Czy napewno chcesz usunąć ten produkt</h4></p>
             <button name="deleteButton" id="deleteButton" type="submit" value="tak">Tak</button>
             <button name="noDeleteButton" id="noDeleteButton" type="submit" value="nie">Nie</button>
         </dialog>
         <dialog id="edit">
-            <p><h4>Edytuj notatkę</h4></p>
-            <p>Treść:</p>
-            <p id="editingText"></p>
-            <textarea name="newtext" id="newtext" placeholder="Edytuj"></textarea><br>
+            <p><h4>Edytuj opis</h4></p>
+            <input type="text" name="newTitle" id="newTitle" placeholder="Wpisz nowy tytuł">
+            <textarea name="newtext" id="newtext" placeholder="Wpisz nowy opis"></textarea><br>
+            <input type="number" name="newPrice" id="newPrice" placeholder="Podaj nową cenę"><br>
             <button name="editButton" id="editButton" type="submit" value="zapisz">Zapisz</button>
             <button name="noEditButton" id="noEditButton" type="submit" value="anuluj">Anuluj</button>
         </dialog>
