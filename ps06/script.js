@@ -13,11 +13,21 @@ let headerFourToEdit = null;
 let paragraphToEdit = null;
 let sectionToDelete = null;
 
+let products = [];
+let currentId = 0;
+
 myform.addEventListener('submit', (event) => {
     event.preventDefault()
     const inputTitle = document.getElementById("title").value;
     const inputText = document.getElementById("text").value;
     const inputPrice = document.getElementById("price").value;
+
+    const product = {
+        id: currentId++,
+        title: inputText,
+        price: inputPrice
+    }
+    products.push(product)
 
     const section = document.createElement("section");
 
@@ -84,7 +94,6 @@ editButton.addEventListener('click', () => {
 noEditButton.addEventListener('click', () => {
     dlgEdit.close();
 })
-
 
 
 
