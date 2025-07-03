@@ -11,6 +11,7 @@ const noDeleteButton = document.getElementById("noDeleteButton");
 let headerTwoToEdit = null;
 let headerFourToEdit = null;
 let paragraphToEdit = null;
+let sectionToEdit = null;
 let sectionToDelete = null;
 
 let products = [];
@@ -24,21 +25,24 @@ myform.addEventListener('submit', (event) => {
 
     const product = {
         id: currentId++,
-        title: inputText,
+        title: inputTitle,
+        text: inputText,
         price: inputPrice
     }
     products.push(product)
 
     const section = document.createElement("section");
+    section.classList.add("section-product-"+product.id)
+    section.dataset.id = product.id;
 
     const h2 = document.createElement("h2");
-    h2.textContent = inputTitle;
+    h2.textContent = product.title;
 
     const p = document.createElement("p");
-    p.textContent = inputText;
+    p.textContent = product.text;
 
     const h4 = document.createElement("h4");
-    h4.textContent = inputPrice + " zł";
+    h4.textContent = product.price + " zł";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Usuń";
@@ -60,6 +64,7 @@ myform.addEventListener('submit', (event) => {
         dlgConfirm.showModal(); 
     })
     editBtn.addEventListener('click', () => {
+        sectionToEdit = section;
         headerTwoToEdit = h2;
         paragraphToEdit = p;
         headerFourToEdit = h4;
@@ -69,9 +74,15 @@ myform.addEventListener('submit', (event) => {
         document.getElementById("newPrice").value = headerFourToEdit.textContent;
         dlgEdit.showModal();
     })
+
+    sumPrices();
 })
 
 deleteButton.addEventListener('click', () => {
+    const id = sectionToDelete.dataset.id; 
+    const index = products.filter(p => p.id == id);
+    products.splice(index, 1);
+
     sectionToDelete.remove();
     dlgConfirm.close();
 })
@@ -84,6 +95,13 @@ editButton.addEventListener('click', () => {
     headerTwoToEdit.textContent = document.getElementById("newTitle").value;
     paragraphToEdit.textContent = document.getElementById("newtext").value;
     headerFourToEdit.textContent = document.getElementById("newPrice").value + " zł";
+
+    const id = sectionToEdit.dataset.id; 
+    products[id].title = headerTwoToEdit.textContent;
+    products[id].text = paragraphToEdit.textContent;
+    products[id].price = headerFourToEdit.textContent;
+    console.log(products);
+
     dlgEdit.close();
 
     headerTwoToEdit = null;
@@ -94,6 +112,26 @@ editButton.addEventListener('click', () => {
 noEditButton.addEventListener('click', () => {
     dlgEdit.close();
 })
+
+const myfooter = document.querySelector("footer");
+
+function sumPrices() {
+    let sum = 0;
+    for(const product of products)
+    {
+        sum += Number(product.price);
+    }
+
+    let sumPricesSection = document.getElementById("suma");
+
+    if (!sumPricesSection) {
+        sumPricesSection = document.createElement("section");
+        sumPricesSection.id = "suma";
+        myfooter.appendChild(sumPricesSection);
+    }
+
+    sumPricesSection.textContent = "Suma: " + sum + " zł";
+}
 
 
 
